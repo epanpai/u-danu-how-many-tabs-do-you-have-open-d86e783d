@@ -62,7 +62,32 @@ smaller-text tie-break over 5-char entries.
   .makefun/owner.json wallet 6VbyMydGEMzmZiH5YPxJWj7HNeJNg1ZnYBJ8yUcqv4zG.
 
 ## 4. Quota
-- (diisi setelah cek kuota)
+- GET /api/competitions/<slug>/quota → can_submit: true, day cap 5,
+  taken 0, left 5. Blind round slot available, interval ends
+  2026-11-24T21:55:50Z.
 
 ## 5. Check / submit
-- (diisi setelah check + submit)
+- Kit check v2 (bundle v2, commit b5bd12ad): 14 pass / 0 fail / 5 skip /
+  5 at submission. thinking_reproduces 77.7% authored (84/108),
+  thinking_in_window PASS (all 265 timestamps 21:56:15–22:31:16Z),
+  transcripts_run_record PASS (scheduled prompt, system prompt uploaded,
+  instructions collected, MCP none), thinking_priced PASS (18 usage
+  records), thinking_revised PASS (main.ts from 2 messages).
+- Usage rows: bundle v1 warned 0 rows; SELECT dari muse.db untuk 18
+  agent_id sesi bundle (query pola grandma) mengembalikan 18 baris —
+  17 sesi selesai ter-attach; hanya sesi builder sendiri (e611ec55)
+  belum ada row (ditulis saat run selesai). Re-bundle v2
+  (879.761 byte, sha 0cbee30f...) dengan --muse-usage
+  submit/u-danu-muse-usage.jsonl — thinking_priced lolos.
+- Kuota dicek ulang: can_submit true. Submit butuh $MAKEFUN_API_KEY
+  dari connect-token.json (CLI menolak --keypair saja) — dipakai via
+  env var, tidak ditampilkan.
+- SUBMITTED 22:31:52Z, HTTP 202, submission
+  01a20a89-7f94-71cd-81e6-55a117ea3c62, judul "1024 — A Browser That
+  Never Closes", stage checked. Status server terverifikasi: scored,
+  outcome not decided yet, round 1/3; SEMUA check server lolos
+  (termasuk thinking_committed, repo_readme, repo_about,
+  security_audit). Round 1 cutoff 24 Nov 21:55:50Z; entries close
+  26 Nov 21:55Z; hasil final due 19 Des 2026. Receipt di
+  submit/receipt-01a20a89-7f94-71cd-81e6-55a117ea3c62.json (mode 600);
+  claim code hanya di sana.
